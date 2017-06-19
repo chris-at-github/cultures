@@ -1,0 +1,87 @@
+.map {
+	& {
+		position: relative;
+	}
+
+	&.terrain {
+		.map--tile-container .map--tile {
+			background-size: 128px 128px;
+		}
+
+		.map--terrain-grass-6e7aa937 {
+			background: url(/images/terrain-green.svg) no-repeat 0 0;
+		}
+
+		.map--terrain-desert-4b5df798 {
+			background: url(/images/terrain-desert.svg) no-repeat 0 0;
+		}
+
+		.map--terrain-sea-afba0d36 {
+			background: url(/images/terrain-sea.svg) no-repeat 0 0;
+		}
+	}
+
+	&.grid {
+		.map--grid-container .map--tile {
+			& {
+				border: 1px solid rgba($white, 0.1);
+			}
+
+			&.active {
+				border: 1px solid rgba($white, 0.5);
+				z-index: 10;
+			}
+		}
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.map--tile {
+	position: absolute;
+	width: 128px;
+	height: 128px;
+}
+
+.map--tile-container {
+	& {
+		position: absolute;
+	}
+
+	.map--tile {
+		background: $white;
+	}
+}
+
+.map--grid-container {
+	& {
+		position: absolute;
+		top: 1px;	left: 1px;
+	}
+
+	.map--tile {
+		width: 129px;
+		height: 129px;
+		margin: -1px 0 0 -1px;
+	}
+
+	span {
+		display: none;
+		text-align: center;
+		line-height: 128px;
+		font-size: 11px;
+		color: rgba($grey-dark, 0.35);
+	}
+}
+
+.map--object-container {
+	& {
+		position: absolute;
+	}
+
+	.map--object-stack {
+		@extend .map--tile;
+	}
+}

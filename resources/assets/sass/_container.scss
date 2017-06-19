@@ -1,0 +1,15 @@
+// ----------------------------------------------------------------------------------
+// Global
+.container {
+	& {
+		padding: 10px;
+		background: $white;
+	}
+
+	.container--header {
+		margin: 0 0 10px 0;
+		font-weight: 600;
+		color: $grey;
+		text-transform: uppercase;
+	}
+}

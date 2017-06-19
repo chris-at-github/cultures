@@ -1,0 +1,23 @@
+.object {
+	& {
+		display: block;
+		position: relative;
+		width: 32px;
+		height: 32px;
+		margin: 2px;
+		background: lighten($grey-dark, 10%);
+		color: $grey-light;
+	}
+
+	&:hover {
+		background: $grey-dark;
+		color: $grey-light;
+	}
+
+	.object--shorthand {
+		position: absolute;
+		bottom: 3px; right: 3px;
+		font-size: 11px;
+		line-height: 1;
+	}
+}

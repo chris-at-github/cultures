@@ -1,0 +1,17 @@
+<f:layout name="Default" />
+
+<f:section name="Content">
+
+	<div class="map"></div>
+
+</f:section>
+
+<f:section name="Script">
+	<script type="text/javascript">
+
+		Cultures.settings = {c:json.encode(value: settings) -> f:format.raw()};
+		Cultures.scene = {c:json.encode(value: scene) -> f:format.raw()};
+
+	</script>
+	<script type="text/javascript" src="/js/cultures.js"></script>
+</f:section>
