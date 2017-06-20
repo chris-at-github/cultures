@@ -54,4 +54,19 @@ class ObjectTest extends TestCase {
 
 		$this->assertFalse($object->getExist());
 	}
+
+	/**
+	 * @return void
+	 */
+	public function testSerializable() {
+
+		/* @var \App\Objects\Object $object */
+		$object = app(\App\Objects\Object::class);
+
+		$this->assertEquals(null, $object->getSerializable());
+
+		$object->setSerializable(['name']);
+		$this->assertCount(1, $object->getSerializable());
+		$this->assertContains('name', $object->getSerializable());
+	}
 }
