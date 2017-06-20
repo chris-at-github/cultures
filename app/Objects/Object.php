@@ -114,4 +114,32 @@ class Object {
 	public function setSerializable($serializable) {
 		$this->serializable = $serializable;
 	}
+
+	/**
+	 * @return array
+	 */
+	public function getFillable() {
+		return $this->fillable;
+	}
+
+	/**
+	 * @param array $fillable
+	 */
+	public function setFillable($fillable) {
+		$this->fillable = $fillable;
+	}
+
+	/**
+	 * @return array
+	 */
+	public function toArray() {
+		return [];
+	}
+
+	/**
+	 * @return string
+	 */
+	public function toJson() {
+		return json_encode($this->toArray());
+	}
 }

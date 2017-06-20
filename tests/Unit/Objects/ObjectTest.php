@@ -69,4 +69,21 @@ class ObjectTest extends TestCase {
 		$this->assertCount(1, $object->getSerializable());
 		$this->assertContains('name', $object->getSerializable());
 	}
+
+	/**
+	 * @return void
+	 */
+	public function testToArray() {
+
+		/* @var \App\Objects\Object $object */
+		$object = app(\App\Objects\Object::class);
+		$data = [
+			'name' => 'Object'
+		];
+
+		$object->fill($data);
+
+		$this->assertArrayHasKey('name', $object->toArray());
+		$this->assertEquals($data, $object->toArray());
+	}
 }
