@@ -19,6 +19,11 @@ class Object {
 	protected $fillable = ['name'];
 
 	/**
+	 * @var array
+	 */
+	protected $serializable = null;
+
+	/**
 	 * @var boolean
 	 */
 	protected $exist = false;
@@ -34,7 +39,7 @@ class Object {
 	 * @param string $uuid
 	 * @return \App\Objects\Object
 	 */
-	public function setUuid(string $uuid) {
+	public function setUuid($uuid) {
 		$this->uuid = $uuid;
 
 		return $this;
@@ -58,7 +63,7 @@ class Object {
 	 * @param string $name
 	 * @return \App\Objects\Object
 	 */
-	public function setName(string $name) {
+	public function setName($name) {
 		$this->name = $name;
 
 		return $this;
@@ -94,5 +99,19 @@ class Object {
 	 */
 	public function setExist($exist) {
 		$this->exist = $exist;
+	}
+
+	/**
+	 * @return array|null
+	 */
+	public function getSerializable() {
+		return $this->serializable;
+	}
+
+	/**
+	 * @param array|null $serializable
+	 */
+	public function setSerializable($serializable) {
+		$this->serializable = $serializable;
 	}
 }
