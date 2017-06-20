@@ -27,9 +27,17 @@ class ObjectManagerTest extends TestCase {
 		$object = app(\App\Objects\Object::class);
 
 		// Store object to database
-		$return = $manager->store($object);
+		$stored = $manager->store($object);
 
 		// Store method always return an object \App\Objects\Object
-		$this->assertInstanceOf(\App\Objects\Object::class, $return);
+		$this->assertInstanceOf(\App\Objects\Object::class, $stored);
+
+		// Test if new object now exists
+		$this->assertTrue($stored->getExist());
+
+		// Test setting uuid for new objects
+		$this->assertEquals(null, $object->getUuid());
+		$this->assertNotEquals(null, $stored->getUuid());
+		$this->assertTrue(\Ramsey\Uuid\Uuid::isValid($stored->getUuid()));
 	}
 }
