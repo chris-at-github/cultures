@@ -133,6 +133,10 @@ class Object {
 	 * @return array
 	 */
 	public function toArray() {
+
+		// todo: get serializable properties
+		// todo: foreach serializable properties -> getter
+
 		return [];
 	}
 
