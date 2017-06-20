@@ -19,6 +19,11 @@ class Object {
 	protected $fillable = ['name'];
 
 	/**
+	 * @var boolean
+	 */
+	protected $exist = false;
+
+	/**
 	 * @return string
 	 */
 	public function getUuid() {
@@ -75,5 +80,19 @@ class Object {
 		}
 
 		return $this;
+	}
+
+	/**
+	 * @return boolean
+	 */
+	public function getExist() {
+		return $this->exist;
+	}
+
+	/**
+	 * @param boolean $exist
+	 */
+	public function setExist($exist) {
+		$this->exist = $exist;
 	}
 }

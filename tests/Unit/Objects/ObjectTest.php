@@ -45,4 +45,13 @@ class ObjectTest extends TestCase {
 		$this->assertEquals('Object', $object->getName());
 		$this->assertNotEquals(true, \Ramsey\Uuid\Uuid::isValid($object->getUuid()));
 	}
+
+	/**
+	 * @return void
+	 */
+	public function testExist() {
+		$object = app(\App\Objects\Object::class);
+
+		$this->assertFalse($object->getExist());
+	}
 }
