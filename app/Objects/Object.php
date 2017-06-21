@@ -9,14 +9,9 @@ class Object {
 	protected $uuid = null;
 
 	/**
-	 * @var string $name
-	 */
-	protected $name;
-
-	/**
 	 * @var array
 	 */
-	protected $fillable = ['name'];
+	protected $fillable = [];
 
 	/**
 	 * @var array
@@ -50,23 +45,6 @@ class Object {
 	 */
 	public function getNamespace() {
 		return get_class($this);
-	}
-
-	/**
-	 * @return string
-	 */
-	public function getName() {
-		return $this->name;
-	}
-
-	/**
-	 * @param string $name
-	 * @return \App\Objects\Object
-	 */
-	public function setName($name) {
-		$this->name = $name;
-
-		return $this;
 	}
 
 	/**

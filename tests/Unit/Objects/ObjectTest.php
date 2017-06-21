@@ -35,14 +35,14 @@ class ObjectTest extends TestCase {
 	/**
 	 * @return void
 	 */
-	public function testFillable() {
+	public function testUnfillable() {
 		$object = app(\App\Objects\Object::class);
 		$object->fill([
 			'uuid' => \Ramsey\Uuid\Uuid::uuid4(),
-			'name' => 'Object'
+//			'name' => 'Object'
 		]);
 
-		$this->assertEquals('Object', $object->getName());
+//		$this->assertEquals('Object', $object->getName());
 		$this->assertNotEquals(true, \Ramsey\Uuid\Uuid::isValid($object->getUuid()));
 	}
 
@@ -55,35 +55,35 @@ class ObjectTest extends TestCase {
 		$this->assertFalse($object->getExist());
 	}
 
-	/**
-	 * @return void
-	 */
-	public function testSerializable() {
+//	/**
+//	 * @return void
+//	 */
+//	public function testSerializable() {
+//
+//		/* @var \App\Objects\Object $object */
+//		$object = app(\App\Objects\Object::class);
+//
+//		$this->assertEquals(null, $object->getSerializable());
+//
+//		$object->setSerializable(['name']);
+//		$this->assertCount(1, $object->getSerializable());
+//		$this->assertContains('name', $object->getSerializable());
+//	}
 
-		/* @var \App\Objects\Object $object */
-		$object = app(\App\Objects\Object::class);
-
-		$this->assertEquals(null, $object->getSerializable());
-
-		$object->setSerializable(['name']);
-		$this->assertCount(1, $object->getSerializable());
-		$this->assertContains('name', $object->getSerializable());
-	}
-
-	/**
-	 * @return void
-	 */
-	public function testToArray() {
-
-		/* @var \App\Objects\Object $object */
-		$object = app(\App\Objects\Object::class);
-		$data = [
-			'name' => 'Object'
-		];
-
-		$object->fill($data);
-
-		$this->assertArrayHasKey('name', $object->toArray());
-		$this->assertEquals($data, $object->toArray());
-	}
+//	/**
+//	 * @return void
+//	 */
+//	public function testToArray() {
+//
+//		/* @var \App\Objects\Object $object */
+//		$object = app(\App\Objects\Object::class);
+//		$data = [
+//			'name' => 'Object'
+//		];
+//
+//		$object->fill($data);
+//
+//		$this->assertArrayHasKey('name', $object->toArray());
+//		$this->assertEquals($data, $object->toArray());
+//	}
 }
