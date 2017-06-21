@@ -110,18 +110,11 @@ class Object {
 	/**
 	 * @return array
 	 */
-	public function toArray() {
+	public function serialize() {
 
 		// todo: get serializable properties
 		// todo: foreach serializable properties -> getter
 
 		return [];
-	}
-
-	/**
-	 * @return string
-	 */
-	public function toJson() {
-		return json_encode($this->toArray());
 	}
 }
